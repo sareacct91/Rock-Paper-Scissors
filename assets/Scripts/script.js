@@ -12,17 +12,10 @@ let score = {
   tie: 0
 };
 
-// Check for valid userInput
-function checkUserInput(inputPar) {
-  
-};
-
 // Function to get selection for user and pc
 function getSelection(parm) {
-  let tempSelection = checkUserInput(parm === 'user' ? prompt("Enter R, P, or S for Rock, Paper, Scissors")
-  : selectionArr[Math.floor(Math.random() * selectionArr.length)]);
-
-  return tempSelection;
+  return parm === 'user' ? prompt("Enter R, P, or S for Rock, Paper, Scissors")
+  : selectionArr[Math.floor(Math.random() * selectionArr.length)];
 }
 
 // Run the code when the start button is pressed
