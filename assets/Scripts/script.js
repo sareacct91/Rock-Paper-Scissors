@@ -5,7 +5,6 @@
 
 const startBtn = document.querySelector("#startBtn");
 
-const selectionArr = ['r', 'p', 's'];
 let score = {
   win: 0,
   lose: 0,
@@ -13,16 +12,18 @@ let score = {
 };
 
 // Function to get selection for user and pc
-function getSelection(parm) {
-  return parm === 'user' ? prompt("Enter R, P, or S for Rock, Paper, Scissors")
+function getSelection(isUser = false) {
+  const selectionArr = ['r', 'p', 's'];
+
+  return isUser ? prompt("Enter R, P, or S for Rock, Paper, Scissors")
   : selectionArr[Math.floor(Math.random() * selectionArr.length)];
 }
 
 // Run the code when the start button is pressed
 function startGame() {
   // Get user input and pc input
-  const userInput = getSelection('user');
-  const pcInput = getSelection('pc');
+  const userInput = getSelection(true);
+  const pcInput = getSelection();
 
   // Compare the selection and get result
   let resultStr = '';
